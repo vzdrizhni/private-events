@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/private-events.iml" filepath="$PROJECT_DIR$/.idea/private-events.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/pivate-events.iml" filepath="$PROJECT_DIR$/.idea/pivate-events.iml" />
+>>>>>>> 945fae579a6524c48b3ab54d9ffc6f427a4a5ac4
     </modules>
   </component>
 </project>
