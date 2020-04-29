@@ -17,7 +17,7 @@
 
 <p>
   <strong>Creator:</strong>
-  <%= @event.creator_id %>
+  <%= current_user.name %>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
