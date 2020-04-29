@@ -1,0 +1,15 @@
+<%= form_with(scope: :session, url: login_path, local: true) do |form| %>
+  <div class="danger">
+    <%= flash[:danger] %>
+  </div>
+
+  <div class="actions">
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+
+    <!--<%= form.label :password %>
+    <%= form.password_field :password %>-->
+
+    <%= form.submit "Log in"%>
+  </div>
+<% end %>
