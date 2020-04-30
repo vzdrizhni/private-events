@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :events
+  resources :events do
+    resources :invitations
+  end
   resources :users
 
   get 'sessions/new'

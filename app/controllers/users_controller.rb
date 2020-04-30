@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  #scope :upcoming_events, -> { where('date >= ?', Time.zone.now) }
+  #scope :previous_events, -> { where('date < ?',  Time.zone.now) }
+
   # GET /users
   # GET /users.json
   def index
@@ -11,6 +14,8 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @upcoming_events = @user.attended_events.upcoming
+    @prev_events = @user.attended_events.previous
   end
 
   # GET /users/new

@@ -20,5 +20,14 @@
   <%= current_user.name %>
 </p>
 
+<p>
+  <strong>Attendees:</strong>
+  <% @attendees.each do |attendee| %>
+    <li><%=link_to attendee.name, user_path %></li>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+<%= button_to 'Attending', event_invitations_path(@event) %>
+
