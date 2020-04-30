@@ -6,8 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
 
     if user # && user.authenticate(params[:session][:password])
-      # session[:user_id] = user.id
-      sign_in(user)
+      session[:user_id] = user.id
       redirect_to user
     else
       flash.now[:danger] = 'Bad email. Try again.'

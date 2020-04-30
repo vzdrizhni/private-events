@@ -1,5 +1,4 @@
 class InvitationsController < ApplicationController
-  #before_action :require_signin
 
   def create
     @event = Event.find(params[:event_id])

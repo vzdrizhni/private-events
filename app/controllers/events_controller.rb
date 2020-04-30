@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show]
-  before_action :signed_in_only!, only: %i[new create]
+  before_action :set_event, only: [:show, :edit, :destroy, :update]
+  before_action :signed_in_only!, only: %i[:index]
 
   # GET /events
   # GET /events.json

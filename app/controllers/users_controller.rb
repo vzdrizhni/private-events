@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  #scope :upcoming_events, -> { where('date >= ?', Time.zone.now) }
-  #scope :previous_events, -> { where('date < ?',  Time.zone.now) }
-
   # GET /users
   # GET /users.json
   def index
