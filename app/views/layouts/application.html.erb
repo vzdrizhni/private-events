@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PrivateEvents</title>
+    <title>PivateEvents</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,10 +11,21 @@
   </head>
 
   <body>
-    <div class="flash-notice">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div>
-    <%= yield %>
+  <header>
+    <% if current_user %>
+      Hi <%= current_user.name %>
+      |
+      <%= link_to 'Log out', logout_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Log in', login_path %>
+      |
+      <%= link_to 'Sign up', new_user_path %>
+    <% end %>
+    <%= render 'layouts/nav_bar' %>
+  </header>
+
+
+
+  <%= yield %>
   </body>
 </html>

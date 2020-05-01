@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>User: <%= @user.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Even title</th>
+      <th>Event Body</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <th>Upcoming</th>
+    <% @upcoming_events.each do |event| %>
+    <tr>
+      <td><%= event.title %></td>
+      <td><%= event.description %></td>
+      <td><%= event.date %></td>
+    </tr>
+    <% end %>
+  </tbody>
+
+  <tbody>
+  <th>Previous</th>
+  <% @prev_events.each do |event| %>
+    <tr>
+      <td><%= event.title %></td>
+      <td><%= event.description %></td>
+      <td><%= event.date %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+
+
+<%= link_to 'New Event', new_event_path %> <br />
+<%= link_to 'Back', users_path %>

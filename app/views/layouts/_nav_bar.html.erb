@@ -1,0 +1,10 @@
+<%= link_to 'Home', root_path %>
+<% if current_page?(:controller => 'events', :action => 'index') %>
+  <%= link_to 'Users', users_path %>
+
+<% end %>
+<% if current_page?(:controller => 'users', :action => 'index') %>
+  <%= link_to 'Events', root_path %>
+
+<% end %>
+
