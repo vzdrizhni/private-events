@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :destroy, :update]
-  before_action :signed_in_only!, only: %i[:index]
+  before_action :signed_in_only!, only: [:index]
+
 
   # GET /events
   # GET /events.json
@@ -30,7 +31,7 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.build(event_params)
     respond_to do |format|
-      if @event.save
+      if @event.save && current_user != nil
         format.html { redirect_to root_path, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
@@ -44,7 +45,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1.json
   def update
     respond_to do |format|
-      if @event.update(event_params)
+      if @event.update(event_params) && current_user != nil
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else

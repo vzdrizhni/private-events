@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-
   # def sign_in(user)
   #   cookies.permanent[:remember_me] = user.create_token
   # end

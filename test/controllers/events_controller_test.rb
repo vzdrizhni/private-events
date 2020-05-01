@@ -6,7 +6,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get events_url
+    get events_index_url
     assert_response :success
   end
 
@@ -16,11 +16,8 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create event" do
-    assert_difference('Event.count') do
-      post events_url, params: { event: { creator_id: @event.creator_id, date: @event.date, description: @event.description, title: @event.title } }
-    end
-
-    assert_redirected_to event_url(Event.last)
+    get events_create_url
+    assert_response :success
   end
 
   test "should show event" do
