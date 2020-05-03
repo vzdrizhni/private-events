@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :destroy, :update]
+  before_action :set_event, only: %i[show edit destroy update]
   before_action :signed_in_only!, only: [:index]
-
 
   # GET /events
   # GET /events.json
@@ -23,15 +22,14 @@ class EventsController < ApplicationController
   end
 
   # GET /events/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /events
   # POST /events.json
   def create
     @event = current_user.events.build(event_params)
     respond_to do |format|
-      if @event.save && current_user != nil
+      if @event.save && !current_user.nil?
         format.html { redirect_to root_path, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
@@ -45,7 +43,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1.json
   def update
     respond_to do |format|
-      if @event.update(event_params) && current_user != nil
+      if @event.update(event_params) && !current_user.nil?
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
@@ -66,13 +64,14 @@ class EventsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_event
-      @event = Event.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def event_params
-      params.fetch(:event).permit(:title, :description, :date)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_event
+    @event = Event.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def event_params
+    params.fetch(:event).permit(:title, :description, :date)
+  end
 end

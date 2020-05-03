@@ -2,7 +2,6 @@ require 'rails_helper'
 require 'capybara/rails'
 
 feature 'The signup process:' do
-
   scenario 'has a new user page' do
     visit(new_user_url)
     expect(page).to have_content('New User')
@@ -27,7 +26,6 @@ feature 'The signup process:' do
 end
 
 feature 'The signin process:' do
-
   scenario 'has a login user page' do
     visit(login_url)
     expect(page).to have_content('Email')
