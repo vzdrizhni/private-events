@@ -1,6 +1,6 @@
 <h1>Events</h1>
 
-<table>
+<table class="table is-hoverable is-striped">
   <thead>
     <tr>
       <th>Title</th>
@@ -15,19 +15,17 @@
     <h1>Upcoming events: </h1>
     <% @upcoming_events.each do |event| %>
       <tr>
-        <td><%= event.title %></td>
+        <td><%= link_to event.title, event %></td>
         <td><%= event.description %></td>
         <td><%= event.date %></td>
         <td><%= event.creator.name %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete %></td>
+        <td><%= link_to 'Delete', event, method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<table>
+<table class="table is-hoverable is-striped">
 
   <thead>
   <tr>
@@ -43,13 +41,11 @@
   <h1>Previous events: </h1>
   <% @prev_events.each do |event| %>
     <tr>
-      <td><%= event.title %></td>
+      <td><%= link_to event.title, event %></td>
       <td><%= event.description %></td>
       <td><%= event.date %></td>
       <td><%= event.creator.name %></td>
-      <td><%= link_to 'Show', event %></td>
-      <td><%= link_to 'Edit', edit_event_path(event) %></td>
-      <td><%= link_to 'Destroy', event, method: :delete  %></td>
+      <td><%= link_to 'Delete', event, method: :delete  %></td>
     </tr>
   <% end %>
   </tbody>

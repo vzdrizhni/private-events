@@ -10,6 +10,46 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *=require_tree .
  *= require_self
  */
+
+// Import component
+ @import "bulma";
+ @import "font-awesome";
+
+header {
+  width: 100%;
+  margin: 0 auto;
+}
+.has-shadow {
+  box-shadow: 0px 2px 12px -3px rgba(85, 65, 101, 0.7);
+  width: 100%;
+}
+nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 97%;
+  margin: 0 auto;
+  .nav-start {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    img {
+      width: 110px;
+      height: 100%;
+    }
+  }
+  .nav-end {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    strong {
+      margin-left: 10px;
+    }
+  }
+}

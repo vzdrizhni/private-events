@@ -5,7 +5,7 @@ class InvitationsController < ApplicationController
     if @attended_event.save
       redirect_to events_path, notice: 'Thanks for following'
     else
-      redirect_to events_path, notice: 'You can only attend once (Matrix! Perhaps!?)'
+      redirect_to events_path, alert: 'You can only attend once (Matrix! Perhaps!?)'
     end
   end
 end
