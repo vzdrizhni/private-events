@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @event.title %>
@@ -30,4 +28,3 @@
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
 <%= button_to 'Attending', event_invitations_path(@event) %>
-
