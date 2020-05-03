@@ -15,8 +15,8 @@ feature 'The signup process:' do
       click_on 'Create User'
     end
 
-    scenario 'redirects to user page after signup' do
-      expect(page).to have_content 'User: '
+    scenario 'redirects to login page after signup' do
+      expect(page).to have_content 'User was successfully created. testing please login.'
     end
 
     scenario 'shows username on the homepage after signup' do
