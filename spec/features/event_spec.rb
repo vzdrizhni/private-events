@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'capybara/rails'
 
 RSpec.describe 'Managing events:', type: :feature do
-  scenario 'create an event -> valid inputs' do
+  scenario 'create an event --> valid inputs' do
     visit new_user_url
     fill_in 'Name', with: 'testing'
     fill_in 'Email', with: 'biscuits@gmail.com'
@@ -19,7 +19,7 @@ RSpec.describe 'Managing events:', type: :feature do
     expect(page).to have_content('Madonna is already gone, bye bye mama')
   end
 
-  scenario 'create an event -> invalid inputs' do
+  scenario 'create an event --> invalid inputs' do
     visit new_user_url
     fill_in 'Name', with: 'testing'
     fill_in 'Email', with: 'biscuits@gmail.com'
@@ -35,7 +35,7 @@ RSpec.describe 'Managing events:', type: :feature do
     expect(page).to have_content("Description can't be blank")
   end
 
-  scenario 'edit an event -> valid inputs' do
+  scenario 'edit an event --> valid inputs' do
     visit new_user_url
     fill_in 'Name', with: 'testing'
     fill_in 'Email', with: 'biscuits@gmail.com'

@@ -7,9 +7,9 @@ RSpec.describe User, type: :model do
     it { should have_many(:invitations).with_foreign_key('attendee_id') }
     it { should have_many(:attended_events).through(:invitations).source(:attended_event) }
   end
-  
+
   describe "validations" do
-    subject { User.create(name:"nam", email:"example@mail.com") }
+    subject { User.create(name:"name", email:"example@mail.com") }
 
     it { should validate_presence_of(:name) }
     it { should validate_length_of(:name).is_at_least(4).is_at_most(20) }
