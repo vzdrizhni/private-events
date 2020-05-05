@@ -26,7 +26,7 @@
     <img src="app/assets/images/microverse.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Forms and Authentication -- [Members_Only]</h3>
+  <h3 align="center">Associations -- [Private_Events]</h3>
 
   <p align="center">
     This project is part of the Microverse curriculum in Ruby on Rails module!
