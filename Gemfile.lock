@@ -97,7 +97,7 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
-    mimemagic (0.3.4)
+    mimemagic (0.3.5)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
@@ -108,6 +108,8 @@ GEM
       mini_portile2 (~> 2.4.0)
     nokogiri (1.10.9-x64-mingw32)
       mini_portile2 (~> 2.4.0)
+    pg (1.2.3)
+    pg (1.2.3-x64-mingw32)
     public_suffix (4.0.4)
     puma (4.3.3)
       nio4r (~> 2.0)
@@ -197,7 +199,7 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2020.1)
       tzinfo (>= 1.0.0)
-    web-console (4.0.1)
+    web-console (4.0.2)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
@@ -229,13 +231,14 @@ DEPENDENCIES
   capybara (>= 2.15)
   font-awesome-rails
   jbuilder (~> 2.7)
+  pg
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.2)
   rspec-rails
   sass-rails (>= 6)
   selenium-webdriver
   shoulda-matchers
-  sqlite3 (~> 1.4)
+  sqlite3
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
