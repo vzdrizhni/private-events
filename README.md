@@ -26,7 +26,7 @@
     <img src="app/assets/images/microverse.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Associations -- [Private_Events]</h3>
+  <h3 align="center">Associations --> [Private_Events]</h3>
 
   <p align="center">
     This project is part of the Microverse curriculum in Ruby on Rails module!
@@ -101,7 +101,7 @@ This project was built using these technologies.
 👤 **Alexandru Bangau**
 
 - LinkedIn: [Alexandru Bangau](https://www.linkedin.com/in/alexandru-bangau/)
-- GitHub: [@vzdrizhni](https://github.com/vzdrizhni)
+- GitHub: [@rammazzoti2000](https://github.com/rammazzoti2000)
 - E-mail: bangau.alexandru@gmail.com
 
 
