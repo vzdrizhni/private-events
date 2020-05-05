@@ -1,0 +1,54 @@
+<div class="controls">
+  <%= link_to 'Back', users_path, class:'button is-primary' %>
+</div>
+<div class="event-tables tables">
+  <h1 class="title title-event is-4 navbar-item"><%= @user.name.capitalize %> is attending the following events:</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <%= fa_icon "calendar" %>
+          <span>Upcoming Events</span>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @upcoming_events.each do |event| %>
+        <tr class="box box-radius">
+          <td class="column">Event: <%= link_to event.title, event %></td>
+          <td class="column"><div class="description">Description: <%= event.description %><div></td>
+          <td class="column">Date: <%= event.date.to_formatted_s(:long_ordinal)  %></td>
+          <td class="column">Creator: <%= event.creator.name %></td>
+          <td class="column"><%= link_to 'Delete', event, method: :delete, class:'button is-primary has-text-white'  %></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>
+          <%= fa_icon "calendar" %>
+          <span>Previous Events</span>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% @prev_events.each do |event| %>
+      <tr class="box box-radius">
+        <td class="column">Event: <%= link_to event.title, event %></td>
+        <td class="column">Description<div class="description"><%= event.description %></div></td>
+        <td class="column">Date: <%= event.date.to_formatted_s(:long_ordinal) %></td>
+        <td class="column">Creator: <%= event.creator.name %></td>
+        <td class="column"><%= link_to 'Delete', event, method: :delete, class:'button is-primary has-text-white'  %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+</div>
