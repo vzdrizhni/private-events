@@ -12,7 +12,7 @@ feature 'The signup process:' do
       visit new_user_url
       fill_in 'Name', with: 'testing'
       fill_in 'Email', with: 'biscuits@gmail.com'
-      click_on 'Create User'
+      click_on 'Submit'
     end
 
     scenario 'redirects to login page after signup' do
@@ -36,14 +36,14 @@ feature 'The signin process:' do
       visit new_user_url
       fill_in 'Name', with: 'testing'
       fill_in 'Email', with: 'biscuits@gmail.com'
-      click_on 'Create User'
+      click_on 'Submit'
       visit login_url
       fill_in 'Email', with: 'biscuits@gmail.com'
-      click_button 'Log in'
+      click_button 'Beat it'
     end
 
     scenario 'redirects to home page after signin' do
-      expect(page).to have_content 'User: '
+      expect(page).to have_content 'testing'
     end
 
     scenario 'shows username on the homepage after signing in' do

@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -23,13 +25,13 @@
         </div>
       <% end %>
       <%= render 'layouts/nav_bar' %>
-      <% if current_user %>
-        <h1 class="title is-4 navbar-item is-marginless is-capitalized">Hi <%= current_user.name %></h1>
-      <% end %>
       <% if !current_user %>
-        <h1 class="title is-4 navbar-item is-marginless">Welcome</h1>
+        <h1 class="title is-4 navbar-item is-marginless">Welcome aboard!</h1>
       <% end %>
     </header>
+    <% if current_user %>
+      <h1 class="title is-4 navbar-item is-capitalized">Hi <%= current_user.name %>!</h1>
+    <% end %>
 
   <%= yield %>
   </body>

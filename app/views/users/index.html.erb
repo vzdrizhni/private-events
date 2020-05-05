@@ -1,22 +1,13 @@
-<h1>Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Email</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to user.name, user %></td>
-        <td><%= user.email %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<h1 class="title title-event is-4 navbar-item">Here is a list of all the users</h1>
+<div class="event-tables tables">
+  <table>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr class="box box-radius">
+          <td class="column">User: <%= link_to user.name, user_path(user) %></td>
+          <td class="column">Email: <%= user.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,32 +1,48 @@
 <%= form_with(model: event, local: true) do |form| %>
   <% if event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+    <div class="box box-radius has-background-danger has-text-white new-event-error">
+      <div id="error_explanation">
+        <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-      <ul>
-        <% event.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% event.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+  <div class="box box-radius new-event">
+    <div class="field">
+      <p>
+        <%= form.label :title %>
+      </p>
+      <p>
+        <%= form.text_field :title, class:'input is-primary', placeholder:'Title...' %>
+      </p>
+    </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+    <div class="field">
+      <p>
+        <%= form.label :description %>
+      </p>
+      <p>
+        <%= form.text_area :description, class:'textarea is-primary', placeholder:'Create new event...' %>
+      </p>
+    </div>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.datetime_select :date %>
-  </div>
+    <div class="field">
+      <p>
+        <%= form.label :date %>
+      </p>
+      <p>
+        <%= form.datetime_select :date %>
+      </p>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions update-create">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>

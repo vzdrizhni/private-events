@@ -1,30 +1,41 @@
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+<div class="controls">
+  <%= link_to 'Edit', edit_event_path(@event), class:'button is-primary' %>
+  <%= link_to 'Back', events_path, class:'button is-primary' %>
+</div>
+<div class="single-event-page box box-radius">
+  <div class="single-event">
+    <p>
+      <strong>Title: </strong>
+      <%= @event.title %>
+    </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
+    <p>
+      <strong>Description: </strong>
+      <%= @event.description %>
+    </p>
 
-<p>
-  <strong>Creator:</strong>
-  <%= @event.creator.name %>
-</p>
+    <p>
+      <strong>Date: </strong>
+      <%= @event.date.to_formatted_s(:long_ordinal) %>
+    </p>
 
-<p>
-  <strong>Attendees:</strong>
-  <% @attendees.each do |attendee| %>
-    <li><%=link_to attendee.name, user_path %></li>
-  <% end %>
-</p>
+    <p>
+      <strong>Creator: </strong>
+      <%= @event.creator.name %>
+    </p>
+  </div>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
-<%= button_to 'Attending', event_invitations_path(@event) %>
+  <div class="event-btn" style="margin: 10px 0">
+    <%= button_to 'Attending', event_invitations_path(@event), class:'button is-primary' %>
+  </div>
+
+  <div class="event-attendees">
+    <p>
+      <strong>Attendees:</strong>
+      <% @attendees.each do |attendee| %>
+        <li><%=link_to attendee.name, user_path(attendee) %></li>
+      <% end %>
+    </p>
+  </div>
+</div>
