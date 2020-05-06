@@ -79,15 +79,22 @@ To have this app on your pc, you need to:
   - ```$ rails db:migrate```
 * and finally, you can test it in the console by running
   - ```$ rails server``` and using ```localhost:3000``` into your browser address bar to start using it
+  ## Rspec testing
+
+* Run the command and see the output: 
+```$ bundle exec rspec```
+![Rspec](app/assets/images/rspec.png)
 
 ### Built With
 This project was built using these technologies.
 * Ruby & Ruby on Rails
+* Rspec / Capybara
 * Bulma
 * SQLite
 * Rubocop
 * Stickler
 * Atom
+* VSCode
 
 <!-- CONTACT -->
 ## Contributors
