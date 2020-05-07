@@ -34,7 +34,7 @@
     <p>
       <strong>Attendees:</strong>
       <% @attendees.each do |attendee| %>
-        <li><%=link_to attendee.name, user_path(attendee) %></li>
+        <li><%= attendee.name %></li>
       <% end %>
     </p>
   </div>

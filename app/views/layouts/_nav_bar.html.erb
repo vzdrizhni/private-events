@@ -8,6 +8,7 @@
         <strong><%= link_to 'Home', root_path, class:'navbar-item' %></strong>
         <strong><%= link_to 'Users', users_path, class:'navbar-item' %></strong>
         <strong><%= link_to 'All Events', root_path, class:'navbar-item' %></strong>
+        <strong><%= link_to current_user.name.capitalize, user_path(current_user), class:'navbar-item' %></strong>
       </div>
       <div class="nav-end">
         <strong><%= link_to 'New Event', new_event_path, class:'button is-light' %></strong>
