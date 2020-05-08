@@ -9,7 +9,7 @@ class User < ApplicationRecord
   before_save { self.email = email.downcase }
   # has_secure_password
 
-  def is_attending?(event)
-     attended_events.include?(event)
+  def attending?(event)
+    attended_events.include?(event)
   end
 end
