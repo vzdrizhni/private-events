@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   root 'events#index'
   resources :events do
-    resources :invitations
+    member do
+      post 'attend', to: 'invitations#create'
+      delete 'unattend', to: 'invitations#destroy'
+    end
   end
+
   resources :users
 
   get 'sessions/new'

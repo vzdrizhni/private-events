@@ -15,7 +15,7 @@
     </thead>
 
     <tbody>
-      <%= render partial:'event', locals: { posts: @events_by_current_user } %>
+      <%= render @events_by_current_user %>
     </tbody>
   </table>
 </div>
@@ -33,7 +33,7 @@
     </thead>
 
     <tbody>
-      <%= render partial:'event', locals: { posts: @upcoming_events } %>
+      <%= render @upcoming_events %>
     </tbody>
 </table>
 
@@ -48,7 +48,7 @@
     </thead>
 
     <tbody>
-      <%= render partial:'event', locals: { posts: @prev_events } %>
+      <%= render @prev_events %>
     </tbody>
   </table>
 </div>

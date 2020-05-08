@@ -12,7 +12,7 @@
     </thead>
 
     <tbody>
-      <%= render partial:'posts', locals: { posts: @upcoming_events } %>
+      <%= render @upcoming_events %>
     </tbody>
 </table>
 
@@ -28,7 +28,7 @@
     </thead>
 
     <tbody>
-      <%= render partial:'posts', locals: { posts: @prev_events } %>
+      <%= render @prev_events %>
     </tbody>
   </table>
 </div>
