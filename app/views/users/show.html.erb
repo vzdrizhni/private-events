@@ -15,15 +15,7 @@
     </thead>
 
     <tbody>
-      <% @events_by_current_user.each do |event|%>
-      <tr class="box box-radius">
-        <td class="column">Event: <%= link_to event.title, event %></td>
-        <td class="column"><div class="description">Description: <%= event.description %><div></td>
-        <td class="column">Date: <%= event.date.to_formatted_s(:long_ordinal)  %></td>
-        <td class="column">Creator: <%= event.creator.name %></td>
-        <td class="column"><%= link_to 'Delete', event, method: :delete, class:'button is-primary has-text-white' %></td>
-      </tr>
-      <% end %>
+      <%= render partial:'events/event', locals: { events_by_current_user: @events_by_current_user } %>
     </tbody>
   </table>
 </div>
@@ -41,15 +33,7 @@
     </thead>
 
     <tbody>
-      <% @upcoming_events.each do |event| %>
-        <tr class="box box-radius">
-          <td class="column">Event: <%= link_to event.title, event %></td>
-          <td class="column"><div class="description">Description: <%= event.description %><div></td>
-          <td class="column">Date: <%= event.date.to_formatted_s(:long_ordinal)  %></td>
-          <td class="column">Creator: <%= event.creator.name %></td>
-          <td class="column"><%= link_to 'Delete', event, method: :delete, class:'button is-primary has-text-white' %></td>
-        </tr>
-      <% end %>
+      <%= render partial:'events/event', locals: { upcoming_events: @upcoming_events } %>
     </tbody>
 </table>
 
@@ -64,15 +48,7 @@
     </thead>
 
     <tbody>
-    <% @prev_events.each do |event| %>
-      <tr class="box box-radius">
-        <td class="column">Event: <%= link_to event.title, event %></td>
-        <td class="column">Description<div class="description"><%= event.description %></div></td>
-        <td class="column">Date: <%= event.date.to_formatted_s(:long_ordinal) %></td>
-        <td class="column">Creator: <%= event.creator.name %></td>
-        <td class="column"><%= link_to 'Delete', event, method: :delete, class:'button is-primary has-text-white'  %></td>
-      </tr>
-    <% end %>
+      <%= render partial:'events/event', locals: { prev_events: @prev_events } %>
     </tbody>
   </table>
 
