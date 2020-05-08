@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  include EventsHelper
+
   before_action :set_event, only: %i[show edit destroy update]
   before_action :signed_in_only!, only: [:index]
 
@@ -14,6 +16,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @attendees = @event.attendees
+    # @current_inv = current_user.invitations.find_by(attended_event_id: @event.id)
   end
 
   # GET /events/new
@@ -58,7 +61,7 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to user_path(current_user), notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

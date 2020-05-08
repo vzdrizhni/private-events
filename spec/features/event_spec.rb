@@ -59,4 +59,27 @@ RSpec.describe 'Managing events:', type: :feature do
     expect(page).to have_content('Minneapolis')
     expect(page).to have_content('Mama are mere, Tata are pere')
   end
+
+  scenario 'attending an event --> valid' do
+    fill_in 'Title', with: 'Minneapolis'
+    fill_in 'Description', with: 'Madonna is already gone, bye bye mama'
+    click_button 'Create'
+    visit root_path
+    click_on('Minneapolis')
+    click_button 'Attending'
+    expect(page).to have_content('Thanks for following')
+  end
+
+  scenario 'attending an event --> invalid' do
+    fill_in 'Title', with: 'Minneapolis'
+    fill_in 'Description', with: 'Madonna is already gone, bye bye mama'
+    click_button 'Create'
+    visit root_path
+    click_on('Minneapolis')
+    click_button 'Attending'
+    expect(page).to have_content('Thanks for following')
+    click_on('Minneapolis')
+    click_button 'Attending'
+    expect(page).to have_content('You can only attend once (Matrix! Perhaps!?)')
+  end
 end
