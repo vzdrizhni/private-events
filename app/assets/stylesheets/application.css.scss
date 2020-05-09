@@ -1,0 +1,197 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *=require_tree .
+ *= require_self
+ */
+
+// Import component
+ @import "bulma";
+ @import "font-awesome";
+
+header {
+  width: 100%;
+  margin: 0 auto;
+}
+.has-shadow {
+  box-shadow: 0px 2px 12px -3px rgba(85, 65, 101, 0.7);
+  width: 100%;
+}
+nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 97%;
+  margin: 0 auto;
+  .nav-start {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    img {
+      width: 110px;
+      height: 100%;
+    }
+  }
+  .nav-end {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    strong {
+      margin-left: 10px;
+    }
+  }
+}
+
+.title {
+  float: left;
+  margin: 10px 0 10px 27px;
+  color: #666;
+}
+
+.title-event {
+  margin-left: -13px;
+}
+
+.tables {
+  margin: 0 auto 30px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  width: 95%;
+  float: none;
+  clear: both;
+  table {
+    width: 100%;
+    thead {
+      border-radius: 5px;
+      th {
+        height: 35px;
+        padding: 10px;
+        font-size: 1.3rem;
+        color: #666;
+      }
+    }
+    tbody {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      tr {
+        margin: 11px 0;
+      }
+      .description {
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+
+    .box {
+      background: lightslategrey;
+      color: aliceblue;
+      font-size: 1.19rem;
+      font-weight: 600;
+      margin: 10px;
+      a {
+        color: powderblue;
+        border-bottom: 1px solid rgba(250, 250, 0, 0.6);
+        padding-bottom: 3px;
+      }
+    }
+  }
+}
+
+.controls {
+  float: right;
+  margin: 20px;
+  a {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  }
+}
+
+.single-event-page {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  float: none;
+  clear: both;
+  width: 85%;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  background: lightslategrey;
+  color: aliceblue;
+  font-weight: 600;
+  a {
+    color: powderblue;
+    border-bottom: 1px solid rgba(250, 250, 0, 0.6);
+    padding-bottom: 3px;
+  }
+}
+
+.new-event {
+  width: 42%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  float: none;
+  clear: both;
+  font-size: 1.3rem;
+  color: #666;
+  background-color: whitesmoke;
+  font-weight: 600;
+  .field {
+    width: 100%;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-flow: column;
+  float: none;
+  clear: both;
+  width: 30%;
+  margin: 12px;
+  .button {
+    margin-top: 13px;
+  }
+}
+
+.update-create input {
+  color: white;
+  background-color: hsl(171, 100%, 41%);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  width: fit-content;
+  width: -moz-fit-content;
+}
+
+.has-background-danger,
+.has-text-danger {
+  float: none;
+  clear: both;
+  width: 22%;
+  margin-left: 12px;
+}
+
+.new-event-error {
+  width: 42%;
+  margin: 0 auto 10px;
+}

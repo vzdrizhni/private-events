@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
+  root 'events#index'
+  resources :events do
+    member do
+      post 'attend', to: 'invitations#create'
+      delete 'unattend', to: 'invitations#destroy'
+    end
+  end
 
-  devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :users
+
+  get 'sessions/new'
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 end

@@ -1,0 +1,31 @@
+<div class="has-shadow">
+  <nav class="navbar">
+    <% if current_user %>
+      <div class="nav-start">
+        <a href="/">
+          <img src="https://clipartart.com/images/closed-for-private-event-clipart-9.jpg" class="image">
+        </a>
+        <strong><%= link_to 'Home', root_path, class:'navbar-item' %></strong>
+        <strong><%= link_to 'Users', users_path, class:'navbar-item' %></strong>
+        <strong><%= link_to 'All Events', root_path, class:'navbar-item' %></strong>
+        <strong><%= link_to current_user.name.capitalize, user_path(current_user), class:'navbar-item' %></strong>
+      </div>
+      <div class="nav-end">
+        <strong><%= link_to 'New Event', new_event_path, class:'button is-light' %></strong>
+        <strong><%= link_to 'Log out', logout_path, method: :delete, class:'button is-primary' %></strong>
+      </div>
+    <% end %>
+
+    <% if !current_user %>
+      <div class="nav-start">
+        <a href="/">
+          <img src="https://clipartart.com/images/closed-for-private-event-clipart-9.jpg" class="image">
+        </a>
+      </div>
+      <div class="nav-end">
+        <strong><%= link_to 'Log in', login_path, class:'button is-primary' %></strong>
+        <strong><%= link_to 'Sign up', new_user_path, class:'button is-light' %></strong>
+      </div>
+    <% end %>
+  </nav>
+</div>
