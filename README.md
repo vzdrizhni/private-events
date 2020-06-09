@@ -45,6 +45,8 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
+  * [Usage](#usage)
+  * [Automated Test](#automated-test)
 * [Contributors](#contributors)
 * [Acknowledgements](#acknowledgements)
 * [License](#license)
@@ -59,8 +61,19 @@ In this project, it has been built an application named Private Events that beha
 ![New Post](app/assets/images/sing_event.png)
 ![SignedIn Posts](app/assets/images/single_user.png)
 
+### Built With
+This project was built using these technologies.
+* Ruby & Ruby on Rails
+* Rspec / Capybara
+* Bulma
+* SQLite
+* Rubocop
+* Stickler
+* Atom
+* VSCode
+
 <!-- INSTALLATION -->
-## Installation
+## Usage
 
 To have this app on your pc, you need to:
 * have Ruby & Ruby on Rails installed in your computer
@@ -79,22 +92,11 @@ To have this app on your pc, you need to:
   - ```$ rails db:migrate```
 * and finally, you can test it in the console by running
   - ```$ rails server``` and using ```localhost:3000``` into your browser address bar to start using it
-  ## Rspec testing
+  ## Automated Test
 
 * Run the command and see the output: 
 ```$ bundle exec rspec```
 ![Rspec](app/assets/images/rspec.png)
-
-### Built With
-This project was built using these technologies.
-* Ruby & Ruby on Rails
-* Rspec / Capybara
-* Bulma
-* SQLite
-* Rubocop
-* Stickler
-* Atom
-* VSCode
 
 <!-- CONTACT -->
 ## Contributors
@@ -110,6 +112,16 @@ This project was built using these technologies.
 - LinkedIn: [Alexandru Bangau](https://www.linkedin.com/in/alexandru-bangau/)
 - GitHub: [@rammazzoti2000](https://github.com/rammazzoti2000)
 - E-mail: bangau.alexandru@gmail.com
+
+## :handshake: Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/vzdrizhni/private-events/issues).
+
+## Show your support
+
+Give a :star: if you like this project!
 
 
 <!-- ACKNOWLEDGEMENTS -->
